@@ -2,23 +2,44 @@
 title: "Create a blazing fast blog with GitHub and Azure"
 date: 2021-03-22
 ---
+Creating a blazing fast blog with GitHub and Azure
+
 Do you want to host your own blazingly fast blog on Azure (for free as of the moment of writing)? Do you want to do this without installing a single tool locally? You have found the right place! 
 
-This Guide assumes you have access to GitHub Codespaces, but you can can complete it in a local environment too.
+! This Guide assumes you have access to GitHub Codespaces, however you can can complete it in a local environment too.
 
->I started this project with the aim to develop a lightweight blog locally and host it as a Static Web App on Azure. While uploading the first iteration to my GitHub repository I noticed the Codespaces feature and got curious - can I fully replace my local environment with one in the cloud?
+> I started this project with the aim to develop a lightweight blog locally and host it as a Static Web App on Azure. While uploading the first iteration to my GitHub repository I noticed the Codespaces feature and got curious - can I replace my local environment with one in the cloud?
 
-### Speed over convenience?
-There are always trade offs to be made when selecting a technology for something. Wordpress and the like might offer a simple website and blog platform from a content creator’s standpoint, but falls behind in performance and security, and requires maintenance. Static websites and Jamstacks, on the other hand, are fast and secure, but require effort to update. It is however possible to make static websites as easy to use as traditional Wordpress blogs, by using GitHub and DevOps magic to automate content updates.
+## Speed over convenience?
+There are always trade offs to be made when selecting a technology for something. Wordpress and the old school CMSs might offer a simple website and blog platform from a content creator’s standpoint, but falls behind in performance and security, and requires maintenance. 
 
-#### GitHub as development environment
+Static websites, on the other hand, are fast and secure, but require effort to update. It is however possible to make static websites as easy to use as traditional Wordpress blogs, by using what is called a JAMstack. 
+
+* J - Javascript
+* A - APIs
+* M - Markdown
+
+Javascript is used for development and enables interactive elements in your otherwise static webpage. The site is dynamic while you develop, but is then built into a static and optimised package for deployment.
+
+APIs are used to access various sources for your content. Every page can be a file somewhere, or  
+
+GitHub and DevOps magic to automate content updates, or by delivering the content through APIs.
+
+This guide will be focused on deploying a jamstack.
+
+### Picking a static website framework
+There are many static website frameworks out there, and the field is constantly changing. 
+
+I chose to build this blog with Gatsby, which is a static website accelerator built upon React. I chose this mainly because the amount of tutorials and other resources available for this framework.
+
+## GitHub as development environment
 GitHub in its core is a host for code repositories. You fetch code, branch, develop locally and then commit your changes and get them merged with the main. The foundation of DevOps. If you want to start learning more about DevOps and Git, HERE IS A GREAT RESOURCE.
 
 There are however new additions to GitHub like Codespaces, that take this to another level by enabling you to develop where the code is. In the cloud.
 
 Codespaces are what they sound like - isolated development environments that can be accessed through browsers on any device.
 
-#### ...and CMS
+### ...and CMS
 As earlier stated, one weakness of static web sites have been that it can be a chore to add new content compared to using a more traditional CMS. With GitHub you can edit and add blog posts to your static website, and it therefore acts as a content management system too. This works without a codespace or even local environment. GitHub enables you to edit files right there in the repository. This might not be a good feature when working on large projects, but for a blog it works. 
 
 After merging changes to the main branch we can then set up GitHub actions and automate the re-build of the static pages after every content addition.
