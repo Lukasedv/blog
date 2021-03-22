@@ -2,9 +2,72 @@
 title: "Create a blazing fast blog with GitHub and Azure"
 date: 2021-03-22
 ---
+Do you want to host your own blazingly fast blog on Azure (for free as of the moment of writing)? Do you want to do this without installing a single tool locally? You have found the right place! 
 
-Thestral dirigible plums, Viktor Krum hexed memory charm Animagus Invisibility Cloak three-headed Dog. Half-Blood Prince Invisibility Cloak cauldron cakes, hiya Harry! Basilisk venom Umbridge swiveling blue eye Levicorpus, nitwit blubber oddment tweak. Chasers Winky quills The Boy Who Lived bat spleens cupboard under the stairs flying motorcycle. Sirius Black Holyhead Harpies, you’ve got dirt on your nose. Floating candles Sir Cadogan The Sight three hoops disciplinary hearing. Grindlewald pig’s tail Sorcerer's Stone biting teacup. Side-along dragon-scale suits Filch 20 points, Mr. Potter.
+This Guide assumes you have access to GitHub Codespaces, but you can can complete it in a local environment too.
 
-> Mobilicorpus reducto liberacorpus crucio. Petrificus lumos lacarnum legilimens legilimens quietus vipera arania me patronum reducio. Episkey reducio quietus mobilicorpus fidelius aparecium. Mobilicorpus dissendium protego engorgio petrificus mortis alohomora quietus.
+>I started this project with the aim to develop a lightweight blog locally and host it as a Static Web App on Azure. While uploading the first iteration to my GitHub repository I noticed the Codespaces feature and got curious - can I fully replace my local environment with one in the cloud?
 
-Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages ‘zis is a chance many would die for
+### Speed over convenience?
+There are always trade offs to be made when selecting a technology for something. Wordpress and the like might offer a simple website and blog platform from a content creator’s standpoint, but falls behind in performance and security, and requires maintenance. Static websites and Jamstacks, on the other hand, are fast and secure, but require effort to update. It is however possible to make static websites as easy to use as traditional Wordpress blogs, by using GitHub and DevOps magic to automate content updates.
+
+#### GitHub as development environment
+GitHub in its core is a host for code repositories. You fetch code, branch, develop locally and then commit your changes and get them merged with the main. The foundation of DevOps. If you want to start learning more about DevOps and Git, HERE IS A GREAT RESOURCE.
+
+There are however new additions to GitHub like Codespaces, that take this to another level by enabling you to develop where the code is. In the cloud.
+
+Codespaces are what they sound like - isolated development environments that can be accessed through browsers on any device.
+
+#### ...and CMS
+As earlier stated, one weakness of static web sites have been that it can be a chore to add new content compared to using a more traditional CMS. With GitHub you can edit and add blog posts to your static website, and it therefore acts as a content management system too. This works without a codespace or even local environment. GitHub enables you to edit files right there in the repository. This might not be a good feature when working on large projects, but for a blog it works. 
+
+After merging changes to the main branch we can then set up GitHub actions and automate the re-build of the static pages after every content addition.
+
+## Let’s go
+This guide assumes you are somewhat familiar with web development and Git, but worry not, I have included links to relevant tutorials.
+
+### Set up GitHub
+I won't go into much details here, but if you are completely new to the world of Git and GitHub, there are some great resources [here](https://guides.github.com/activities/hello-world/)
+
+#### Clone a template
+![Clone a repository](./clone.png)
+
+### Activate your Codespace
+![Codespace](./codespacesorclone.png)
+Initializing a codespace takes maybe a minute. 
+It is important that you let the Codespace "settle" before doing anything. There is a yarn script running that downloads all the node packages needed for Gatsby. You can follow this process if you switch terminal to 2: GitHub Codespaces at the bottom. You can move on when you get the following message:
+```
+Finished configuring codespace.
+```
+![Codespace overview](./codespaces_buildcomplete.png)
+
+#### Start developing and customizing the template
+When the codespace is done we can start developing and customizing the blog template. To start the development server and see you blog live you can run this yarn script. You don't even need to install the gatsby-cli!
+
+```
+yarn run develop
+```
+You will be prompted that a server is running on port 8000. You can then press the button to open the site in another tab, or navigate to the "Ports" tab next to the terminal, and select the local address for port 8000.
+
+Feel free to configure whatever you want, the template instructions can be found in the README.md file in the menu to your left, or [here.](https://github.com/LekoArts/gatsby-starter-minimal-blog)
+
+![Development](./sidebyside.png)
+
+#### Commit changes
+When your minimum-viable-blog is ready and you want to save your progress, we can proceed to committing the changes made. In the left menu you can find the "Source Control" tab. Here you can see all the changes you have made to the files in the repository. 
+
+![Changes](./commit1.png)
+
+Press the checkmark at the top of the source control tab to commit all these changes. Since we don't use staging, you can go ahead and commit everything directly. Remember to add a message, or not, it's up to you. 
+
+![Commit popup](./commitpopup.png)
+
+#### ...and push!
+Commiting changes won't do anything yet, you also need to push these changes to the repository to save your progress. Press the three dots `...` in the menu and choose "push". 
+
+![Push the changes](./push.png)
+
+After pressing push you can open your repository on GitHub and verify that everything has been securely pushed straight into production. 
+
+ 
+
