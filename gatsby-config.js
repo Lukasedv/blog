@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Lukas Lundin',
     siteTitleAlt: `Lukas Blog`,
-    siteImage: "./banner.jpg", 
+    siteImage: "/banner.jpg", 
   },
   plugins: [
     {
@@ -48,7 +48,7 @@ module.exports = {
         description: `Just a blog`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#6B46C1`,
+        theme_color: "#007FFF" ,
         display: `standalone`,
         icons: [
           {
