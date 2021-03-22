@@ -8,6 +8,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Lukas Lundin',
     siteTitleAlt: `Lukas Blog`,
+    siteImage: "./banner.jpg", 
   },
   plugins: [
     {
