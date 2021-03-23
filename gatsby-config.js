@@ -14,6 +14,8 @@ module.exports = {
     siteDescription: "A blog",
     siteLanguage: "en",
     Title: "Lukas Lundin",
+    Author: "Lukas Lundin",
+    Name: "Lukas Lundin",
     TitleAlt: "Lukas Blog",
     Image: "/banner.jpg", 
     Headline: "Lukas Lundin | Blog",
@@ -75,9 +77,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-netlify`,
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
