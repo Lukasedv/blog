@@ -13,6 +13,13 @@ module.exports = {
     siteUrl: "https://blog.lukaslund.in",
     siteDescription: "A blog",
     siteLanguage: "en",
+    Title: "Lukas Lundin",
+    TitleAlt: "Lukas Blog",
+    Image: "/banner.jpg", 
+    Headline: "Lukas Lundin | Blog",
+    siteUrl: "https://blog.lukaslund.in",
+    Description: "A blog",
+    Language: "en",
   },
   plugins: [
     {
