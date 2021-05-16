@@ -28,6 +28,28 @@ Press Review + create and let Azure do some magic. A CI/CD pipeline will be set 
 
 ### Adding a custom domain name
 
-The random URL might not be very human-friendly, so connecting a domain name to your blog is probably of high priority. Domains can be acquired through a lot of different providers and this tutorial will not focus on how to purchase a domain, those instructions differ a bit bewteen registrar. 
+The random URL might not be very human-friendly, so connecting a domain name to your blog is probably of high priority. Domains can be acquired through a lot of different providers and this tutorial will not focus on how to purchase a domain, those instructions differ a bit between registrar. 
+
+Once you have bought your domain, you can add it as a custom domain by following the instructions on screen. You add a record somewhere in the DNS settings at your registrar, and it takes a little while to verify, after which your domain will point to your blog.
 
 ![Adding a custom domain](./domain.jpg)
+
+### Updating the blog
+
+Now your repository is connected to a pipeline in GitHub Actions, that listens to any update in the repository. When something changes, like an added .mdx file for a blog post, it automatically leaps into action by re-building your blog in a couple of minutes. 
+
+It might be a bit tedious to push a new folder containing your pictures and an .mdx file every time you want to publish a new blog post, but we will look into adding some form of light CMS in a future post. 
+
+![Deploying a new post](./deploy2.jpg)
+
+### Bonus: Automatic staging environment by pull request
+
+One really cool feature of Static Web App is that it automatically builds and hosts development versions of your website based on pull requests. This development site can then be used to test your code before merging it to the main branch. 
+
+Let's say you are blogging with multiple people, then a pull request could be made for each blog post, and the editor-in-chief could have a look at the blog in a live production environment before merging it into the public blog.
+
+![Staging environments](./staging.jpg)
+
+### Thank you for reading
+
+In a future post I will try to implement some form of content management system like Contentful, to make the blog posting workflow smoother, as well as visitor statistics.
