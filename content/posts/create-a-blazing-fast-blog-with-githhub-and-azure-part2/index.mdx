@@ -1,0 +1,33 @@
+---
+title: "Create a blazing fast blog with GitHub and Azure without leaving your browser (part 2)"
+date: 2021-05-16
+banner: ./blazingfast.png
+---
+
+In the previous part we developed a JAMstack blog without leaving the browser, using GitHub Codespaces. The result of that part was a GitHub repository that we will now deploy using a brand new Azure service called Static Web App (I really like the no-nonsense naming of Azure services!).
+
+Azure Static Web Apps are similar to GitHub Pages, but enable you to connect other useful Azure services to your page, like functions, custom domains, and monitoring. 
+
+### Creating a Static Web App
+
+With your repository ready, open Azure and search for Static Web App in the search bar. Go ahead and create a new service, the instructions are incredibly straight-forward.
+
+![Create a Static Web App](./create.jpg)
+
+Select hosting plan according to your needs, I believe the free tier can take you a long way for personal projects. The pricing tiers are listed below and [more information can be found here.](https://azure.microsoft.com/en-us/pricing/details/app-service/static/) I am going to select Free for this blog.
+
+![Pricing](./pricing.jpg)
+
+The following step is to connect your GitHub repository by logging into GitHub and authenticating. Then you can choose your organization, repository, and branch. If you followed the previous step, you should pick the master/main branch. 
+
+Under build details you choose which framework you are using, and Gatsby can be found as a preset. Pick Gatsby, and leave the rest of the fields as they are.
+
+![Connecting GitHub](./github.jpg)
+
+Press Review + create and let Azure do some magic. A CI/CD pipeline will be set up in GitHub Actions, and automatically pull the code, build your blog, and deploy it for you! You will also be handed a random URL to access the page. 
+
+### Adding a custom domain name
+
+The random URL might not be very human-friendly, so connecting a domain name to your blog is probably of high priority. Domains can be acquired through a lot of different providers and this tutorial will not focus on how to purchase a domain, those instructions differ a bit bewteen registrar. 
+
+![Adding a custom domain](./domain.jpg)
