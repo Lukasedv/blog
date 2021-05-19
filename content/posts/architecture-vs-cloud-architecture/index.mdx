@@ -1,0 +1,78 @@
+---
+title: "Architecture vs. Cloud Architecture"
+date: 2021-05-19
+banner: ./architecture.png
+---
+I applied to become an architect at Aalto University in 2010, but being incredibly colorblind and bad at drawing did not score me many points at the entrance exams, and I was rejected. 
+
+Now about ten years later, after passing the Azure Architect certification exams, I started wondering if there is anything in common between traditional architects and cloud architects. 
+
+## The five phases of traditional architecture 
+The American Institute of Architects (AIA) defines five phases of architecture that are commonly referred to in architectural design. 
+
+
+>0. Pre-design
+>1. Schematic design
+>2. Design development
+>3. Construction documents
+>4. Bidding
+>5. Contract administration
+
+Let's take a look at these phases and see if there are corresponding areas when deploying cloud solutions. 
+
+### 0. Pre-design/Feasability study
+There is actually a step before diving into the phases defined by AIA, and that is pre-design, or a feasibility study. This step is not always done by the final architect doing the rest of the design, but can be ordered as a separate assessment. 
+
+The pre-design can contain a site analysis, zoning analysis, scoping, budgeting, team selection, and scheduling deadlines. In case of modifying an existing building this is where you test for asbestos and other hazardous materials.
+
+> ☁️ **Cloud equivalent** 
+>
+The pre-design phase in cloud architecture would fall under the "Plan" phase of the Cloud Adoption Framework. Before deploying a cloud solution you would do a zoning analysis by looking at the rest of the enterprise architecture. Scoping, budget and scheduling follows the same pattern as traditional architecture.
+
+If handling existing infrastructure, you would also inspect the site for hazardous material that could cause trouble. What is the digital equivalent of asbestos? Tools like Azure Migrate can be used to automate much of the pre-planning of existing workloads. 
+
+It seems there are a lot of similarities already! 
+
+### 1. Schematic Design
+ In this phase the material from the pre-design phase is closely inspected together with the owner, going over the requirements such as zoning and building codes. The schematic phase is where you are doing the general design, but not getting into deep detail. You want to figure out how the building is going to look and operate.
+ 
+> ☁️ **Cloud equivalent** 
+>
+Going by cloud adoption principles, this would be the "Ready" phase. It is where larger landing zone architecture is drawn up and discussed with the owner, much like in traditional design. Zoning and building codes would be landing zones and policies in the cloud. 
+
+### 2. Design Development
+Once the major schematic has been drafted, the architect then moves on to details. Which materials should be chosen for the various surfaces? What types of windows should be used? Where do the appliances go? 
+
+At this point more and more people start to get involved. Electricians and plumbers are joining to provide in-depth schematics for their areas of expertise. When this phase is over there should be a pretty decent picture of both the interior and exterior of the building. 
+
+> ☁️ **Cloud equivalent** 
+>
+Once the landing zone and architecture has been drawn up, specialists are commonly involved to contribute with specific expertise. Networking and databases are two areas that need to be consulted once the major architecture has been made. Combining the macro design with databases and network, there should be a pretty decent picture of the entire solution at this stage. Sounds familiar?
+
+### 3. Construction Documents
+This is the most time-consuming phase of traditional architecture. This is where everything is drawn up and designed in detail, to be handed over to constructors and legal authorities for final approval. Every instance and contractor receives material that is relevant to their profession and function - everything needs to work like clockwork at this point.
+
+> ☁️ **Cloud equivalent** 
+>
+Infrastructure-as-code is a popular term that can be used to describe this phase. Nothing has been deployed, but everything is written down in the exact way it is going to be deployed later. The template can also be submitted to the cloud "authorities", tested against e.g. Azure Policy to see if it passes. 
+
+### 4. Bidding
+Once the final documents have been approved and everything has been specified, the task is then tendered to find a construction firm. Multiple contractors are involved and this can be a daunting task. Questions from the contractors have to be answered and offers then compared against each other. 
+
+> ☁️ **Cloud equivalent** 
+>
+In cloud deployments the architect and the constructor are often the same firm, which means that the bidding phase comes way earlier. 
+
+A new interesting addition is to do bidding on a container basis. You have your docker container ready and then compare cloud platform pricing for your workload on a weekly, daily, hourly, or on-demand level. 
+
+### 5. Contract Administration
+This is the last phase of architectural design, where the architect stays involved during the construction of the building, providing feedback as needed. On a typical project the architect will not actively supervise construction, but will be available to answer questions and clear things up. 
+
+> ☁️ **Cloud equivalent** 
+>
+As previously mentioned the cloud architect and constructor are often the same firm or even person. A handover can be made if there are managed services involved after the solution has been deployed. In this case the keys are handed over to the managed service provider, who then keeps everything running. 
+
+### Conclusion
+There are a surprising amount of similarities at least in the early stages of the architectural processes, but the similarities diverge since cloud deployments take shorter times compared to building entire physical complexes. 
+
+The AIA framework can be somewhat aligned to the [Cloud Adoption Framework](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/) that was mentioned earlier. For more information about how clouds are built, familiarize yourself with the framework, it really contains something for everyone - architect or enthusiast.
